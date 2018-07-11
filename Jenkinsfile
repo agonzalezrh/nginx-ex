@@ -1,4 +1,6 @@
-node('maven') {
+pipeline {
+  agent any
+  stages {
   stage('Checkout') {
     git url: "https://github.com/agonzalezrh/nginx-ex", branch: "master"
   }
@@ -19,4 +21,5 @@ node('maven') {
   stage('System Test') {
     sh "curl -s -X GET http://agonzalez/"
   }
+}
 }
