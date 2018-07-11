@@ -1,6 +1,6 @@
 node('maven') {
-  stage('Build') {
-    git url: "https://github.com/agonzalezrh/nginx-ex"
+  stage('Checkout') {
+    git url: "https://github.com/agonzalezrh/nginx-ex", branch: "master"
   }
   stage('Test') {
     parallel(
